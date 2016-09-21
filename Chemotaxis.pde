@@ -3,14 +3,16 @@ Bacteria [] pneunomia;
 
 void setup()   
  {     
- 	size(400,400);
+ 	size(400,400);  
+ 	pneunomia = new Bacteria[10];
+ 	for (int i = 0; i < 10; i ++) {
+ 		pneunomia[i] = new Bacteria((i * 15) + 10,(i * 15) + 10);
+ 	}
  }   
  void draw()   
  {    
  	background(255);
-  	for (int i = 0; i < 20; i ++) {
-  		pneunomia = new Bacteria[10];
- 		pneunomia[i] = new Bacteria(i * 15,i * 15);
+  	for (int i = 0; i < 10; i ++) {
  		pneunomia[i].show();
  		pneunomia[i].move();
  	} 
