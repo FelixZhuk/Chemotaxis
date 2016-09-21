@@ -4,15 +4,15 @@ Bacteria [] pneunomia;
 void setup()   
  {     
  	size(400,400);  
- 	pneunomia = new Bacteria[10];
- 	for (int i = 0; i < 10; i ++) {
+ 	pneunomia = new Bacteria[15];
+ 	for (int i = 0; i < 15; i ++) {
  		pneunomia[i] = new Bacteria((i * 15) + 10,(i * 15) + 10);
  	}
  }   
  void draw()   
  {    
  	background(255);
-  	for (int i = 0; i < 10; i ++) {
+  	for (int i = 0; i < 15; i ++) {
  		pneunomia[i].show();
  		pneunomia[i].move();
  	} 
@@ -41,6 +41,26 @@ void setup()
  		else if (yPos < 20) {
  			yPos = yPos + (int)(Math.random() * 3);
  		}
+ 		else if (mousePressed == true) {
+ 			if (mouseX > 200) {
+ 				xPos = xPos + (int)(Math.random() * 3) - 2;
+ 				if (mouseY > 200) {
+	 				yPos = yPos + (int)(Math.random() * 3) - 2;
+	 			}
+	 			else if (mouseY < 200) {
+	 			yPos = yPos + (int)(Math.random() * 3); 
+	 			}
+	 		}
+	 		else if (mouseX < 200) {
+	 			xPos = xPos + (int)(Math.random() * 3);
+ 				if (mouseY > 200) {
+	 				yPos = yPos + (int)(Math.random() * 3) - 2;
+	 			}
+	 			else if (mouseY < 200) {
+	 			yPos = yPos + (int)(Math.random() * 3); 
+	 			}
+	 		}
+	 	}
  		else {
  		xPos = xPos + (int)(Math.random() * 3) - 1;
  		yPos = yPos + (int)(Math.random() * 3) - 1;
